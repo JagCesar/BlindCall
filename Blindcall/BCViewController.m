@@ -25,7 +25,6 @@
 }
 
 - (void) didFindDirection: (BCGestureRegocnizer *) recognizer {
-    
 }
 
 - (void)didReceiveMemoryWarning

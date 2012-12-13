@@ -38,6 +38,10 @@
     
 }
 
+- (NSNumber *) numberForGesture {
+   return [BCGestureRegocnizer translateDirectionToNumber:self.direction];
+}
+
 + (NSNumber *)translateDirectionToNumber:(BCDiagonalDirection)direction
 {
     switch (direction) {
