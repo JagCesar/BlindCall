@@ -34,7 +34,8 @@
 }
 
 - (void) calculateDirection {
-    
+    double angle = atan2(endLocation.y - startingLocation.y, endLocation.x-startingLocation.x);
+    NSLog(@"angle: %f", angle);
 }
 
 @end
