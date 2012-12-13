@@ -19,6 +19,7 @@ typedef enum {
     kBCDirectionMiddleToBottomLeft,
     kBCDirectionMiddleToLeftMiddle,
     kBCDirectionMiddleToTopLeft,
+    kBCDirectionMiddleBottom,
 } BCDiagonalDirection;
 
 @interface BCGestureRegocnizer : UIGestureRecognizer

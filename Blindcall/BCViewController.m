@@ -28,14 +28,10 @@
 }
 
 - (void) didFindDirection: (BCGestureRegocnizer *) recognizer {
-    if ( recognizer.state != UIGestureRecognizerStateRecognized )
+    if ( recognizer.state == UIGestureRecognizerStateRecognized )
         [self addString:[[recognizer numberForGesture] description]];
 }
 
-- (void) didDoubleTap: (UITapGestureRecognizer *)tap
-{
-    [self clear];
-}
 
 - (void)didReceiveMemoryWarning
 {

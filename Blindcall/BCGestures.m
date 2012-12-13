@@ -51,11 +51,11 @@
     CGFloat xDist = endLocation.x - startingLocation.x;
     CGFloat yDist = endLocation.y - startingLocation.y;
     
-    NSLog(@"dist: %f", sqrt((xDist*xDist)+(yDist*yDist)));
+//    NSLog(@"dist: %f", sqrt((xDist*xDist)+(yDist*yDist)));
     
-    if (sqrt((xDist*xDist)+(yDist*yDist)) < 25.0f) {
+    float dist = sqrt((xDist*xDist)+(yDist*yDist));
+    if ( dist < 25.0f) {
         [self setDirection:kBCDirectionMiddle];
-        NSLog(@"%d", [self direction]);
         return;
     }
     
@@ -78,7 +78,10 @@
     } else if (-157.5f < angle && angle < -112.5f) {
         [self setDirection:kBCDirectionMiddleToTopLeft];
     }
-    NSLog(@"%d", [self direction]);
+    
+    if ( endLocation.y >= [[UIScreen mainScreen] bounds].size.height-25 )
+        [self setDirection:kBCDirectionMiddleBottom];
+        
 }
 
 - (NSNumber *) numberForGesture {
@@ -120,6 +123,10 @@
             
         case kBCDirectionMiddleToBottomRight:
             return [NSNumber numberWithInt:9];
+            break;
+            
+        case kBCDirectionMiddleBottom:
+            return [NSNumber numberWithInt:0];
             break;
 
         default:
