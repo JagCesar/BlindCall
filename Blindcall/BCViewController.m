@@ -9,11 +9,12 @@
 #import "BCViewController.h"
 #import "BCGestures.h"
 #import <AudioToolbox/AudioToolbox.h>
-
+#import "RBVolumnButtons.h"
 @interface BCViewController ()
 @property(nonatomic,strong) BCGestureRegocnizer *gestureRecoginizer;
 @property(nonatomic,strong) UITapGestureRecognizer *tapGesture;
 @property (nonatomic) IBOutlet UILabel *numberLabel;
+@property(nonatomic,strong) RBVolumeButtons *buttons;
 @end
 
 @implementation BCViewController
@@ -22,9 +23,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.buttons = [[RBVolumeButtons alloc] init];
     self.gestureRecoginizer = [[BCGestureRegocnizer alloc] initWithTarget:self action:@selector(didFindDirection:)];
     self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)];
     self.tapGesture.numberOfTapsRequired = 2;
+    
+    [self.buttons setUpBlock:^{
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",self.numberLabel.text]]];
+    }];
+    
+    [self.buttons setDownBlock:^{
+        NSInteger length = [self.numberLabel.text length];
+        if ( length > 0 )
+        {
+            [self.numberLabel setText: [self.numberLabel.text substringWithRange:NSMakeRange(0, length-1)]];
+        }
+    }];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clear) name:@"didShake" object:nil];
     
