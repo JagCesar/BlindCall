@@ -40,20 +40,20 @@ void volumeListenerCallback (
     float volume = *volumePointer;
     
     
-    if( volume > [(RBVolumeButtons*)inClientData launchVolume] )
+    if( volume > [(__bridge RBVolumeButtons*)inClientData launchVolume] )
     {
-        [(RBVolumeButtons*)inClientData volumeUp];
+        [(__bridge RBVolumeButtons*)inClientData volumeUp];
     }
-    else if( volume < [(RBVolumeButtons*)inClientData launchVolume] )
+    else if( volume < [(__bridge RBVolumeButtons*)inClientData launchVolume] )
     {
-        [(RBVolumeButtons*)inClientData volumeDown];
+        [(__bridge RBVolumeButtons*)inClientData volumeDown];
     }
     
 }
 
 -(void)volumeDown
 {
-    AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, self);
+    AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, (__bridge void *)(self));
     
     [[MPMusicPlayerController applicationMusicPlayer] setVolume:launchVolume];
     
@@ -68,7 +68,7 @@ void volumeListenerCallback (
 
 -(void)volumeUp
 {
-    AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, self);
+    AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, (__bridge void *)(self));
     
     [[MPMusicPlayerController applicationMusicPlayer] setVolume:launchVolume];
     
@@ -108,7 +108,7 @@ void volumeListenerCallback (
         }
         
         CGRect frame = CGRectMake(0, -100, 10, 0);
-        MPVolumeView *volumeView = [[[MPVolumeView alloc] initWithFrame:frame] autorelease];
+        MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:frame];
         [volumeView sizeToFit];
         [[[[UIApplication sharedApplication] windows] objectAtIndex:0] addSubview:volumeView];
         
@@ -163,7 +163,7 @@ void volumeListenerCallback (
 
 -(void)applicationWentAway
 {
-    AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, self);
+    AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, (__bridge void *)(self));
     
     if( hadToLowerVolume )
     {
@@ -187,12 +187,11 @@ void volumeListenerCallback (
     {
         [[MPMusicPlayerController applicationMusicPlayer] setVolume:0.0];
     }
-    [super dealloc];
 }
 
 -(void)initializeVolumeButtonStealer
 {
-    AudioSessionAddPropertyListener(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, self);
+    AudioSessionAddPropertyListener(kAudioSessionProperty_CurrentHardwareOutputVolume, volumeListenerCallback, (__bridge void *)(self));
 }
 
 @end

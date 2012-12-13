@@ -23,6 +23,7 @@
 		72B465C1167A89C600BB7770 /* BCWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B465C0167A89C600BB7770 /* BCWindow.m */; };
 		72B465C5167A927A00BB7770 /* RBVolumnButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B465C4167A927A00BB7770 /* RBVolumnButtons.m */; };
 		E2F87FC2167A846A008C727C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F87FC1167A846A008C727C /* AudioToolbox.framework */; };
+		E2F87FCD167A936A008C727C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F87FCC167A936A008C727C /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		72B465C3167A927A00BB7770 /* RBVolumnButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBVolumnButtons.h; sourceTree = "<group>"; };
 		72B465C4167A927A00BB7770 /* RBVolumnButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBVolumnButtons.m; sourceTree = "<group>"; };
 		E2F87FC1167A846A008C727C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E2F87FCC167A936A008C727C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F87FCD167A936A008C727C /* MediaPlayer.framework in Frameworks */,
 				E2F87FC2167A846A008C727C /* AudioToolbox.framework in Frameworks */,
 				72B4658B167A795D00BB7770 /* UIKit.framework in Frameworks */,
 				72B4658D167A795D00BB7770 /* Foundation.framework in Frameworks */,
@@ -88,9 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				E2F87FC1167A846A008C727C /* AudioToolbox.framework */,
-				72B4658A167A795D00BB7770 /* UIKit.framework */,
-				72B4658C167A795D00BB7770 /* Foundation.framework */,
 				72B4658E167A795D00BB7770 /* CoreGraphics.framework */,
+				72B4658C167A795D00BB7770 /* Foundation.framework */,
+				E2F87FCC167A936A008C727C /* MediaPlayer.framework */,
+				72B4658A167A795D00BB7770 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
