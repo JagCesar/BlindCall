@@ -24,4 +24,5 @@ typedef enum {
 @interface BCGestureRegocnizer : UIGestureRecognizer
 @property(nonatomic,assign) BCDiagonalDirection direction;
 + (NSNumber *) translateDirectionToNumber: (BCDiagonalDirection) direction;
+- (NSNumber *) numberForGesture;
 @end

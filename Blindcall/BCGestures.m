@@ -39,6 +39,10 @@
     NSLog(@"angle: %f", angle*180/M_1_PI);
 }
 
+- (NSNumber *) numberForGesture {
+   return [BCGestureRegocnizer translateDirectionToNumber:self.direction];
+}
+
 + (NSNumber *)translateDirectionToNumber:(BCDiagonalDirection)direction
 {
     switch (direction) {
