@@ -10,4 +10,6 @@
 
 @interface BCViewController : UIViewController
 
+- (void)addString:(NSString*)string;
+
 @end
