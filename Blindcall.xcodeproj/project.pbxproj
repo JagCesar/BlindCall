@@ -20,6 +20,7 @@
 		72B465A7167A795E00BB7770 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B465A5167A795E00BB7770 /* MainStoryboard_iPad.storyboard */; };
 		72B465AA167A795E00BB7770 /* BCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B465A9167A795E00BB7770 /* BCViewController.m */; };
 		72B465B2167A7A0C00BB7770 /* BCGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B465B1167A7A0C00BB7770 /* BCGestures.m */; };
+		E2F87FC2167A846A008C727C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F87FC1167A846A008C727C /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		72B465A9167A795E00BB7770 /* BCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCViewController.m; sourceTree = "<group>"; };
 		72B465B0167A7A0C00BB7770 /* BCGestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCGestures.h; sourceTree = "<group>"; };
 		72B465B1167A7A0C00BB7770 /* BCGestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCGestures.m; sourceTree = "<group>"; };
+		E2F87FC1167A846A008C727C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2F87FC2167A846A008C727C /* AudioToolbox.framework in Frameworks */,
 				72B4658B167A795D00BB7770 /* UIKit.framework in Frameworks */,
 				72B4658D167A795D00BB7770 /* Foundation.framework in Frameworks */,
 				72B4658F167A795D00BB7770 /* CoreGraphics.framework in Frameworks */,
@@ -78,6 +81,7 @@
 		72B46589167A795D00BB7770 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2F87FC1167A846A008C727C /* AudioToolbox.framework */,
 				72B4658A167A795D00BB7770 /* UIKit.framework */,
 				72B4658C167A795D00BB7770 /* Foundation.framework */,
 				72B4658E167A795D00BB7770 /* CoreGraphics.framework */,
@@ -312,6 +316,7 @@
 				72B465AF167A795E00BB7770 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

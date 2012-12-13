@@ -8,6 +8,7 @@
 
 #import "BCViewController.h"
 #import "BCGestures.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface BCViewController ()
 @property(nonatomic,strong) BCGestureRegocnizer *gestureRecoginizer;
@@ -36,6 +37,7 @@
 
 - (void)addString:(NSString*)string {
     [self.numberLabel setText:[NSString stringWithFormat:@"%@%@",[self.numberLabel text], string]];
+    AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
 }
 
 - (void)removeLastChar {
