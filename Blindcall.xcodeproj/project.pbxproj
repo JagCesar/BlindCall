@@ -19,6 +19,7 @@
 		72B465A4167A795E00BB7770 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B465A2167A795E00BB7770 /* MainStoryboard_iPhone.storyboard */; };
 		72B465A7167A795E00BB7770 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B465A5167A795E00BB7770 /* MainStoryboard_iPad.storyboard */; };
 		72B465AA167A795E00BB7770 /* BCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B465A9167A795E00BB7770 /* BCViewController.m */; };
+		72B465B2167A7A0C00BB7770 /* BCGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B465B1167A7A0C00BB7770 /* BCGestures.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		72B465A6167A795E00BB7770 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		72B465A8167A795E00BB7770 /* BCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCViewController.h; sourceTree = "<group>"; };
 		72B465A9167A795E00BB7770 /* BCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCViewController.m; sourceTree = "<group>"; };
+		72B465B0167A7A0C00BB7770 /* BCGestures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCGestures.h; sourceTree = "<group>"; };
+		72B465B1167A7A0C00BB7770 /* BCGestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCGestures.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				72B465A8167A795E00BB7770 /* BCViewController.h */,
 				72B465A9167A795E00BB7770 /* BCViewController.m */,
 				72B46591167A795D00BB7770 /* Supporting Files */,
+				72B465B0167A7A0C00BB7770 /* BCGestures.h */,
+				72B465B1167A7A0C00BB7770 /* BCGestures.m */,
 			);
 			path = Blindcall;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				72B46597167A795D00BB7770 /* main.m in Sources */,
 				72B4659B167A795D00BB7770 /* BCAppDelegate.m in Sources */,
 				72B465AA167A795E00BB7770 /* BCViewController.m in Sources */,
+				72B465B2167A7A0C00BB7770 /* BCGestures.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
