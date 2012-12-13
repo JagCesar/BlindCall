@@ -17,8 +17,17 @@
 
 @implementation BCGestureRegocnizer
 
+- (id)initWithTarget:(id)target action:(SEL)action
+{
+    self = [super initWithTarget:target action:action];
+    if ( self )
+    {
+    }
+    return self;
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    if ( [touches count] == 1 ) {
+    if ( self.numberOfTouches == 1 ) {
         self.state = UIGestureRecognizerStateBegan;
         self.direction = kBCDirectionMiddle;
         UITouch *touch = [touches anyObject];
@@ -28,9 +37,12 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
-    if ( [touches count] == 1 ) {
+    if ( self.numberOfTouches == 1 ) {
         endLocation = [touch locationInView:touch.view];
         [self calculateDirection];
+        self.state = UIGestureRecognizerStateRecognized;
+    } else {
+        self.state = UIGestureRecognizerStateFailed;
     }
 }
 
