@@ -35,8 +35,38 @@
 }
 
 - (void) calculateDirection {
-    double angle = atan2(endLocation.y - startingLocation.y, endLocation.x-startingLocation.x);
-    NSLog(@"angle: %f", angle*180/M_1_PI);
+    
+    CGFloat xDist = endLocation.x - startingLocation.x;
+    CGFloat yDist = endLocation.y - startingLocation.y;
+    
+    NSLog(@"dist: %f", sqrt((xDist*xDist)+(yDist*yDist)));
+    
+    if (sqrt((xDist*xDist)+(yDist*yDist)) < 25.0f) {
+        [self setDirection:kBCDirectionMiddle];
+        NSLog(@"%d", [self direction]);
+        return;
+    }
+    
+    double angle = atan2(endLocation.y - startingLocation.y, endLocation.x-startingLocation.x)*180/M_PI;
+    
+    if (-112.5f < angle && angle < -67.5f) {
+        [self setDirection:kBCDirectionMiddleToTopMiddle];
+    } else if (-67.5f < angle && angle < -22.5 ) {
+        [self setDirection:kBCDirectionMiddleToTopRight];
+    } else if (-22.5f < angle && angle < 22.5f) {
+        [self setDirection:kBCDirectionMiddleToMiddleRight];
+    } else if (22.5f < angle && angle < 67.5f) {
+        [self setDirection:kBCDirectionMiddleToBottomRight];
+    } else if (67.5f < angle && angle < 112.5f) {
+        [self setDirection:kBCDirectionMiddleToBottomMiddle];
+    } else if (112.5 < angle && angle < 157.5f) {
+        [self setDirection:kBCDirectionMiddleToBottomLeft];
+    } else if ((157.5f < angle && angle < 180.0f) || (-180.0f < angle && angle < -157.5f)) {
+        [self setDirection:kBCDirectionMiddleToLeftMiddle];
+    } else if (-157.5f < angle && angle < -112.5f) {
+        [self setDirection:kBCDirectionMiddleToTopLeft];
+    }
+    NSLog(@"%d", [self direction]);
 }
 
 - (NSNumber *) numberForGesture {
