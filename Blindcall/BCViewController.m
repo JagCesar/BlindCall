@@ -12,6 +12,7 @@
 
 @interface BCViewController ()
 @property(nonatomic,strong) BCGestureRegocnizer *gestureRecoginizer;
+@property(nonatomic,strong) UITapGestureRecognizer *tapGesture;
 @property (nonatomic) IBOutlet UILabel *numberLabel;
 @end
 
@@ -22,8 +23,14 @@
 {
     [super viewDidLoad];
     self.gestureRecoginizer = [[BCGestureRegocnizer alloc] initWithTarget:self action:@selector(didFindDirection:)];
+    self.tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTap:)];
+    self.tapGesture.numberOfTapsRequired = 2;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clear) name:@"didShake" object:nil];
+    
+    [self.view addGestureRecognizer:self.tapGesture];
     [self.view addGestureRecognizer:self.gestureRecoginizer];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -59,5 +66,8 @@
     });
 }
 
+- (void) didTap: (UITapGestureRecognizer *) tap {
+    
+}
 
 @end

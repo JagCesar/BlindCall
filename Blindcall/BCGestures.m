@@ -17,14 +17,6 @@
 
 @implementation BCGestureRegocnizer
 
-- (id)initWithTarget:(id)target action:(SEL)action
-{
-    self = [super initWithTarget:target action:action];
-    if ( self )
-    {
-    }
-    return self;
-}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if ( self.numberOfTouches == 1 ) {
