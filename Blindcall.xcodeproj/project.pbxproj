@@ -88,6 +88,8 @@
 		72B46590167A795D00BB7770 /* Blindcall */ = {
 			isa = PBXGroup;
 			children = (
+				72B465B0167A7A0C00BB7770 /* BCGestures.h */,
+				72B465B1167A7A0C00BB7770 /* BCGestures.m */,
 				72B46599167A795D00BB7770 /* BCAppDelegate.h */,
 				72B4659A167A795D00BB7770 /* BCAppDelegate.m */,
 				72B465A2167A795E00BB7770 /* MainStoryboard_iPhone.storyboard */,
@@ -95,8 +97,6 @@
 				72B465A8167A795E00BB7770 /* BCViewController.h */,
 				72B465A9167A795E00BB7770 /* BCViewController.m */,
 				72B46591167A795D00BB7770 /* Supporting Files */,
-				72B465B0167A7A0C00BB7770 /* BCGestures.h */,
-				72B465B1167A7A0C00BB7770 /* BCGestures.m */,
 			);
 			path = Blindcall;
 			sourceTree = "<group>";

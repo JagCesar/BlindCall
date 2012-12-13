@@ -7,11 +7,11 @@
 //
 
 #import "BCViewController.h"
+#import "BCGestures.h"
 
 @interface BCViewController ()
-
+@property(nonatomic,strong) BCGestureRegocnizer *gestureRecoginizer;
 @property (nonatomic) IBOutlet UILabel *numberLabel;
-
 @end
 
 @implementation BCViewController
@@ -19,7 +19,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.gestureRecoginizer = [[BCGestureRegocnizer alloc] initWithTarget:self action:@selector(didFindDirection:)];
+    [self.view addGestureRecognizer:self.gestureRecoginizer];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) didFindDirection: (BCGestureRegocnizer *) recognizer {
+    
 }
 
 - (void)didReceiveMemoryWarning
